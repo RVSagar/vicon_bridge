@@ -717,7 +717,7 @@ private:
     }
 
     tf::Transform t;
-    t.setOrigin(tf::Vector3(grab_resp.pose.pose.position.x, grab_resp.pose.pose.position.y,
+    t.setOrigin(tf::Vector3(grab_resp.pose.pose.position.x - req.x_offset, grab_resp.pose.pose.position.y - req.y_offset,
                             grab_resp.pose.pose.position.z - req.z_offset));
     t.setRotation(tf::Quaternion(grab_resp.pose.pose.orientation.x, grab_resp.pose.pose.orientation.y,
                                  grab_resp.pose.pose.orientation.z, grab_resp.pose.pose.orientation.w));
